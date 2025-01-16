@@ -12,12 +12,16 @@
 
   .features-grid {
     display: grid;
+    margin: 0 10%;;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    justify-content: center;
 
     .feature-card {
 
       background: $background-dark;
+      background: linear-gradient(135deg, $background-dark, $background-light);
+
       padding: 20%;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -33,7 +37,8 @@
       }
     }
     .feature-card:hover{
-      background: $background-light;
+      background: linear-gradient(135deg, $background-light, $background-dark);
+      cursor: pointer;
       h3{
         color: $secondary-color;
       }

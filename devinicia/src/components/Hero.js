@@ -13,7 +13,7 @@ const Hero = () => {
             placeholder="Ingresa tu correo electrónico"
             className="hero-input"
           />
-          <button type="submit" className="hero-button">
+          <button type="submit" className="hero-button" id="access-button">
             Obtenga acceso gratuito
           </button>
         </form>

@@ -4,7 +4,8 @@ import '../styles/styles.css';
 const Header = () => {
   return (
     <header className="header">
-      <h1 className="logo">Devinicia</h1>
+      <h1 className="logo"><img src="/logo-dev.png" alt="Logo Devinicia" />
+      </h1>
       <nav>
         <a className="nav-link" href="#inicio">Inicio</a>
         <a className="nav-link" href="#nosotros">Nosotros</a>

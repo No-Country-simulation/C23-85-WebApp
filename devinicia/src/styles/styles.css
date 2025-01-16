@@ -32,6 +32,9 @@ a {
 .header .logo {
   font-size: 24px;
 }
+.header .logo img {
+  height: 35px;
+}
 .header .nav-link {
   margin: 0 10px;
   color: #fff;
@@ -46,7 +49,7 @@ a {
   align-items: center;
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #ff11eb, #2575fc);
   color: #fff;
 }
 .hero .hero-content {
@@ -101,11 +104,14 @@ a {
 }
 .features .features-grid {
   display: grid;
+  margin: 0 10%;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  justify-content: center;
 }
 .features .features-grid .feature-card {
   background: #333;
+  background: linear-gradient(135deg, #333, #555555);
   padding: 20%;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -114,13 +120,14 @@ a {
 .features .features-grid .feature-card h3 {
   margin-bottom: 10px;
   font-size: 20px;
-  color: #6a11cb;
+  color: #ff11eb;
 }
 .features .features-grid .feature-card p {
   color: #ccc;
 }
 .features .features-grid .feature-card:hover {
-  background: #555555;
+  background: linear-gradient(135deg, #555555, #333);
+  cursor: pointer;
 }
 .features .features-grid .feature-card:hover h3 {
   color: #2575fc;
