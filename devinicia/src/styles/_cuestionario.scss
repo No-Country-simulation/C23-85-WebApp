@@ -1,0 +1,94 @@
+.cuestionarioContainer{
+  display: flex;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  .resultado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    .puntaje{
+      font-size: 2rem;
+
+    }
+    button{
+      width: 10rem;
+      padding: 1rem;
+      border-radius: 15px;
+      border: 3px solid $primary-color;
+      background: $secondary-color;
+      color: white;
+      font-weight: bold;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 250ms;
+    }
+    button:hover{
+      background: $primary-color;
+      transition: 250ms;
+    }  
+  }
+  .pregunta{
+    animation: aparecer 1s linear 1 forwards;
+    background-color: $background-light;
+    padding: 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2{
+      text-align: center;
+      font-size: 1rem
+      
+    };
+    .opciones{
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 1rem;
+      .opcion{
+        width: 10rem;
+        padding: 1rem;
+        border-radius: 15px;
+        border: 3px solid $primary-color;
+        background: $secondary-color;
+        color: white;
+        font-weight: bold;
+        font-weight: 800;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 250ms;
+      }
+      .opcion:hover{
+        background: $primary-color;
+        transition: 250ms;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 768px){
+  .cuestionarioContainer{
+
+
+    .pregunta{
+      width: 90%;
+      margin: 1rem;
+      .opciones{
+        flex-direction: column;
+        .opcion{
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+}
+

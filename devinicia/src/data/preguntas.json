@@ -1,0 +1,29 @@
+
+
+
+ [
+  {
+    "id": 1,
+    "pregunta": "¿Qué significa HTML?",
+    "opciones": ["HyperText Markup Language", "HyperText Management Language", "HyperText Marking Language", "HyperTool Markup Language"],
+    "respuestaCorrecta": "HyperText Markup Language"
+  },
+  {
+    "id": 2,
+    "pregunta": "¿Qué lenguaje usa tipado estático?",
+    "opciones": ["Python", "JavaScript", "Java", "Ruby"],
+    "respuestaCorrecta": "Java"
+  },
+  {
+    "id": 3,
+    "pregunta": "¿Qué es una función?",
+    "opciones": ["Almacenar datos", "Tipo de bucle", "Código reutilizable", "Variable especial"],
+    "respuestaCorrecta": "Código reutilizable"
+  },
+  {
+    "id": 4,
+    "pregunta": "¿Para qué sirve un algoritmo de ordenamiento?",
+    "opciones": ["Buscar en una lista", "Ordenar elementos", "Borrar duplicados", "Encontrar el máximo"],
+    "respuestaCorrecta": "Ordenar elementos"
+  }
+]

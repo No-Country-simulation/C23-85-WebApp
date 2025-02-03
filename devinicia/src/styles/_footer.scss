@@ -1,8 +1,9 @@
 .footer {
   text-align: center;
   padding: 20px;
-  background: #111;
+  background: $background-dark;
   color: #fff;
+  flex-shrink: 0;
 
   .footer-link {
     color: $secondary-color;

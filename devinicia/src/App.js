@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -14,5 +14,25 @@ function App() {
     </div>
   );
 }
+
+export default App;
+ */
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Cuestionario from "./components/Cuestionario"; // Importa el cuestionario
+import Home from "./components/Home"; // Página principal
+import "./styles/styles.css";
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cuestionario" element={<Cuestionario />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;

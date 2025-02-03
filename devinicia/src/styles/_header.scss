@@ -1,9 +1,11 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  padding: 10px;
   background: $background-dark;
   color: $text-color;
+  flex-shrink: 0; /* Mantiene su tamaño, no se encoge */
 
   .logo {
     font-size: 24px;
@@ -20,4 +22,5 @@
       color: $button-color;
     }
   }
+  
 }
