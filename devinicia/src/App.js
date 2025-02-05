@@ -19,9 +19,9 @@ export default App;
  */
 
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Cuestionario from "./components/Cuestionario"; // Importa el cuestionario
-import Home from "./components/Home"; // Página principal
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import Cuestionario from "./components/Cuestionario";
+import Home from "./components/Home";
 import "./styles/styles.css";
 
 const App = () => {

@@ -9,12 +9,12 @@ const Login = () => {
 
     try {
       // Realiza la solicitud al backend
-      const response = await fetch("http://localhost/devinicia/backend/login.php", {
+      const response = await fetch("http://localhost/deviniciahome/backend/login.php", {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded", // Tipo de datos enviados
+          "Content-Type": "application/json",
         },
-        body: new URLSearchParams({
+        body: JSON.stringify({
           usuario: usuario, // Datos del formulario
           clave: clave,
         }),

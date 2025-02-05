@@ -1,47 +1,27 @@
 <?php
-header("Access-Control-Allow-Origin: *"); // Permite solicitudes desde cualquier origen (útil para desarrollo)
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Allow-Headers: Content-Type");
 
-include 'db_connection.php'; // Incluye la conexión a la base de datos
+header("Content-Type: application/json");
+echo json_encode(["success" => true, "message" => "El backend funciona"]);
+
+require 'conexion.php';
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $vUsuario = $_POST['usuario'];
-    $vClave = $_POST['clave'];
+    $email = $_POST['email'];
+    $password = $_POST['contraseña'];
 
-    $Usuario = DatosLogin($vUsuario, $vClave, $vConexion);
+    $sql = "SELECT id, nombre, contraseña, rol FROM usuarios WHERE email = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (!empty($Usuario)) {
-        echo json_encode([
-            'success' => true,
-            'data' => $Usuario
-        ]);
+    if ($user && password_verify($password, $user['contraseña'])) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_name'] = $user['nombre'];
+        $_SESSION['user_role'] = $user['rol'];
+        echo json_encode(["status" => "success", "message" => "Login exitoso", "user" => $user]);
     } else {
-        echo json_encode([
-            'success' => false,
-            'message' => 'Usuario o contraseña incorrectos.'
-        ]);
+        echo json_encode(["status" => "error", "message" => "Credenciales incorrectas"]);
     }
-}
-
-function DatosLogin($vUsuario, $vClave, $vConexion) {
-    $Usuario = array();
-    $SQL = "SELECT usuario.id_usuario, usuario.nombre_usuario, usuario.contrasena, usuario.id_tipousuario, tipousuario.descripcion as nombre_tipousuario
-            FROM usuario 
-            JOIN tipousuario ON usuario.id_tipousuario = tipousuario.id_tipousuario
-            WHERE usuario.nombre_usuario = '$vUsuario' AND usuario.contrasena = '$vClave'";
-
-    $rs = mysqli_query($vConexion, $SQL);
-    $data = mysqli_fetch_array($rs);
-
-    if (!empty($data)) {
-        $Usuario['ID'] = $data['id_usuario'];
-        $Usuario['NOMBRE'] = $data['nombre_usuario'];
-        $Usuario['CONTRASEÑA'] = $data['contrasena'];
-        $Usuario['NIVEL'] = $data['id_tipousuario'];
-        $Usuario['NOMBRE_NIVEL'] = $data['nombre_tipousuario'];
-    }
-
-    return $Usuario;
 }
 ?>
