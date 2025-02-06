@@ -1,0 +1,66 @@
+.team-container{
+  padding: 5rem;
+  height: 100%;
+  background: linear-gradient(-303deg, $primary-color, $secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  h2{
+    font-size: 3rem;
+    font-family: "DM Serif Text", serif;
+  }
+  .team-card{
+    width: 50%;
+    border-radius: 30px;
+    background: $background-light;
+    padding: 50px;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    .team-pic{
+      .team-member{
+        width: 10rem;
+        border-radius: 10px;
+      }
+
+    }
+    .team-detail{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: space-around;
+      h3{color: $text-color}
+      p{color: $p-color;}
+    }   
+  }
+}
+
+
+@media (max-width: 790px){
+  .team-container{
+    gap: 5px;
+    padding: 5px;
+    h2{
+      font-size: 2rem;
+      text-align: center;
+    }
+    .team-card{
+      width: 90%;
+      padding: 15px;
+      flex-direction: column;
+      .team-pic{
+        .team-member{width: 10rem;}
+      }
+      .team-detail{
+        p{
+          text-align: justify;
+          font-size: 0.85rem;  
+        }
+      }
+    }
+  }
+
+}
